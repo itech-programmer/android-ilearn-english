@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="55dp">
+
+    <RelativeLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_avatar"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_boy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_leaderboard_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/image_avatar"
+            android:fontFamily="@font/vogue"
+            android:text="@string/full_name"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/header_text_normal_size"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_leaderboard_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="58dp"
+            android:layout_toStartOf="@id/text_leaderboard_point"
+            android:text="@string/title_zero" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_leaderboard_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:text="8"
+            android:textColor="@color/text_color_primary" />
+
+    </RelativeLayout>
+</RelativeLayout>

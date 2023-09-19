@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--menu list of bottom navigation bar-->
+
+    <item
+        android:id="@+id/bottom_navigation_dictionary"
+        android:icon="@drawable/btn_dictionary"
+        android:checked="false"
+        android:title="@string/title_dictionary"/>
+
+    <item
+        android:id="@+id/bottom_navigation_leaderboard"
+        android:icon="@drawable/btn_leaderboard"
+        android:checked="false"
+        android:title="@string/title_leaderboard"/>
+
+    <item
+        android:id="@+id/bottom_navigation_home"
+        android:icon="@drawable/btn_home"
+        android:checked="false"
+        android:title="@string/title_home"/>
+
+    <item
+        android:id="@+id/bottom_navigation_games"
+        android:icon="@drawable/btn_games"
+        android:checked="false"
+        android:title="@string/title_games"/>
+
+    <item
+        android:id="@+id/bottom_navigation_profile"
+        android:icon="@drawable/btn_profile"
+        android:checked="false"
+        android:title="@string/title_profile"/>
+</menu>

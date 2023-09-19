@@ -1,0 +1,121 @@
+<resources>
+    <string name="app_name">ilearn</string>
+
+    <!-- sign in -->
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="no_account_string">Don\'t have an account ?\ </string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="no_internet">No Internet, Try again Later!</string>
+    <string name="connection_timeout">Connection Problem, Try Again Later!</string>
+
+    <!-- sign up -->
+    <string name="create_account">Create Account !</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password_not_match">Password And Confirm Password doesn\'t match!</string>
+
+    <!-- bottom navigation view -->
+    <string name="title_dictionary">Dictionary</string>
+    <string name="title_leaderboard">Leaderboard</string>
+    <string name="title_home">Home</string>
+    <string name="title_games">Games</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- Home Fragment -->
+    <string name="title_hello">Hello </string>
+    <string name="title_all_chapters">All Chapters</string>
+    <string name="title_chapter_name">Chapter Name</string>
+
+    <!-- Profile Fragment -->
+    <string name="email">Email</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logout">Log out</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="title_zero">0</string>
+    <string name="total_points">Total Points</string>
+    <string name="challenges">Challenges</string>
+    <string name="ranking">Ranking</string>
+
+    <!-- Leaderboard Fragment -->
+    <string name="all">All</string>
+    <string name="user">User</string>
+    <string name="daily">Daily</string>
+    <string name="top_user">Top User</string>
+    <string name="users">Users</string>
+    <string name="score">Score</string>
+    <string name="rank">Rank</string>
+    <string name="weekly">Weekly</string>
+    <string name="no_data_found">No Data Found</string>
+
+    <!-- Dictionary Fragment -->
+    <string name="search">Search</string>
+    <string name="what_do_you_want_to_learn">What do you want to learn ?</string>
+    <string name="word_game">Word Game</string>
+    <string name="word_game_description">Play some word games to learn and practise describing vocabulary.</string>
+    <string name="question_game">Questions</string>
+    <string name="title_questions_by_chapters">Questions by Chapters</string>
+
+    <!-- Games Fragment -->
+    <string name="fives_game_name">Fives</string>
+    <string name="best">Best</string>
+    <string name="play">Play</string>
+    <string name="reset">Reset</string>
+
+    <!-- Questions Fragment -->
+    <string name="watch_zero">0:00</string>
+    <string name="see_hint">See Hint</string>
+    <string name="in_science_chapter">In Science Chapter</string>
+    <string name="total_question">Total Question</string>
+    <string name="total_exercise">Total Exercise</string>
+    <string name="total_point">Total Point</string>
+    <string name="let_s_start">let\'s start</string>
+    <string name="cancel">Cancel</string>
+    <string name="earned_point">Earned Point</string>
+    <string name="start_new_question">Start New Question</string>
+    <string name="start_new_exercise">Start New Exercise</string>
+    <string name="back">Go Back</string>
+
+    <!-- Lesson Activity -->
+    <string name="title_lesson">Lesson Name</string>
+    <string name="title_teacher">Teacher Name</string>
+    <string name="title_exercises">Exercises</string>
+    <string name="title_questions">Questions</string>
+    <string name="lesson_content">Content</string>
+    <string name="title_all_lessons">Lessons</string>
+
+    <!-- Settings Activity -->
+    <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="sound">Sound</string>
+    <string name="change_language">Change Language</string>
+
+    <!-- Admob banner ad id, replace with your own ad unit id -->
+    <string name="admob_banner_id">ca-app-pub-5083409727755927/2165234113</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="something_wrong">Something went wrong!</string>
+    <string name="wrong_answer">Wrong Answer!</string>
+    <string name="submit">submit</string>
+    <string name="answer">Please write answer</string>
+    <string name="english">English</string>
+    <string name="uzbek">Uzbek</string>
+    <string name="karakalpak">Karakalpak</string>
+    <string name="russian">Russian</string>
+    <string name="fives">Fives</string>
+
+    <!-- Game Fives -->
+    <string name="you_could_made">You could have made</string>
+    <string name="or_other">Or Other</string>
+    <string name="word">Word</string>
+    <string name="play_again">Play Again</string>
+    <string name="you_scored">You Scored</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="grammar">Grammar</string>
+
+
+</resources>

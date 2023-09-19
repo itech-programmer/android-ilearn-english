@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white_color"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context=".ui.activities.SettingActivity">
+
+
+    <!--change language section-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onChangeLang"
+        android:foreground="?selectableItemBackground"
+        android:visibility="visible"
+        android:layout_height="60dp"
+        android:background="#FAFBFF"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_language" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/change_language"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:layout_marginEnd="5dp"
+            android:rotationX="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--sound section-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:foreground="?selectableItemBackground"
+        android:background="#FAFBFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_sound" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/sound"
+            android:textSize="18sp" />
+
+       <androidx.appcompat.widget.SwitchCompat
+           android:id="@+id/switch_sound"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:layout_marginEnd="5dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--connect privacy policy-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/btn_privacy_policy"
+        android:visibility="visible"
+        android:layout_marginTop="5dp"
+        android:foreground="?selectableItemBackground"
+        android:background="#FAFBFF"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_hand" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/privacy_policy"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:layout_marginEnd="5dp"
+            android:rotationX="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible"
+        android:id="@+id/btn_terms_of_conditions"
+        android:layout_marginTop="5dp"
+        android:foreground="?selectableItemBackground"
+        android:background="#FAFBFF"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_accept" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/terms_and_conditions"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:layout_marginEnd="5dp"
+            android:rotationX="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>

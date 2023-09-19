@@ -1,0 +1,232 @@
+package uz.qubemelon.ilearn.adapters.questions;
+
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import uz.qubemelon.ilearn.R;
+import uz.qubemelon.ilearn.database.Storage;
+import uz.qubemelon.ilearn.models.courses.questions.Answers;
+import uz.qubemelon.ilearn.models.courses.questions.SubmitAnswer;
+import uz.qubemelon.ilearn.network.ErrorHandler;
+import uz.qubemelon.ilearn.network.RetrofitClient;
+import uz.qubemelon.ilearn.network.RetrofitInterface;
+import uz.qubemelon.ilearn.ui.activities.questions.QuestionsActivity;
+import uz.qubemelon.ilearn.ui.fragments.questions.FragmentQuestions;
+import uz.qubemelon.ilearn.utilities.Utility;
+
+public class QuestionsAnswersAdapter extends RecyclerView.Adapter<QuestionsAnswersAdapter.QuestionAnswersHolder> {
+
+    private List<Answers> answers_item_list;
+    private Activity activity;
+    private String question_id;
+    private int point;
+    private int right_id = 0;
+    private FragmentQuestions fragment_questions;
+    private TextView text_user_point;
+    private ImageView right_wrong;
+    private boolean isAnswered = false;
+
+    /* this is the constructor for the leaderboard */
+    public QuestionsAnswersAdapter(FragmentQuestions fragment_questions, List<Answers> answers_item_list, Activity activity, String question_id, int point, ImageView right_wrong, TextView text_user_point) {
+        this.answers_item_list = answers_item_list;
+        this.point = point;
+        this.activity = activity;
+        this.question_id = question_id;
+        this.right_wrong = right_wrong;
+        text_user_point = text_user_point;
+        this.fragment_questions = fragment_questions;
+    }
+
+
+    /* this is the function where every row layout inflate for the recycler view */
+    @NonNull
+    @Override
+    public QuestionAnswersHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_answer, parent, false);
+        return new QuestionAnswersHolder(view);
+    }
+
+    /*this is the place for data binding for recycler view */
+    @Override
+    public void onBindViewHolder(@NonNull final QuestionAnswersHolder holder, final int position) {
+        /*check if user has not selected right answer*/
+        if (right_id != 0) {
+            if (answers_item_list.get(position).getId() == right_id) {
+                /* if not then set the background green for the right answer */
+                holder.question_answer_name.setTextColor(activity.getResources().getColor(R.color.text_color_white));
+                //holder.quizOptionBg.setImageResource(R.drawable.quiz_option_bg_right);
+                    holder.img_question_overlap.setVisibility(View.VISIBLE);
+                    Glide.with(activity).load(R.drawable.answer_right).into(holder.img_question_overlap);
+                right_id = 0;
+            }
+        }
+        /*set the option name */
+        if (answers_item_list.get(position).getAnswer() != null) {
+                holder.question_answer_name.setVisibility(View.GONE);
+                holder.progress_bar_load_profile.setVisibility(View.VISIBLE);
+                Glide.with(activity).load(answers_item_list.get(position).getAnswer()).listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        holder.progress_bar_load_profile.setVisibility(View.GONE);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource data_source, boolean isFirstResource) {
+                        holder.progress_bar_load_profile.setVisibility(View.GONE);
+                        return false;
+                    }
+                }).into(holder.img_question_overlap);
+        }
+
+        holder.card_answer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*if user has not tap on any options, do the api call of submit answer */
+                if (!isAnswered) {
+                    submit_answer(question_id, holder.getAbsoluteAdapterPosition(), holder);
+                }
+            }
+        });
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return answers_item_list.size();
+    }
+
+
+    /*quiz holder for the recycler view*/
+    class QuestionAnswersHolder extends RecyclerView.ViewHolder {
+        ProgressBar progress_bar_load_profile;
+        ImageView img_question_overlap;
+        CardView card_answer;
+        TextView question_answer_name;
+
+        public QuestionAnswersHolder(View itemView) {
+            super(itemView);
+            progress_bar_load_profile = itemView.findViewById(R.id.progress_bar_load_profile);
+            img_question_overlap = itemView.findViewById(R.id.img_question_overlap);
+            card_answer = itemView.findViewById(R.id.card_answer);
+            question_answer_name = itemView.findViewById(R.id.text_question_answer);
+        }
+    }
+
+    /* call this function to submit answer by options id, position, and holder */
+    public void submit_answer(String answer_id, final int position, final QuestionAnswersHolder holder) {
+        Storage storage = new Storage(activity);
+        RetrofitInterface retrofit_interface = RetrofitClient.get_retrofit().create(RetrofitInterface.class);
+        final Call<String> submitAnswerCall = retrofit_interface.submitAnswer(RetrofitClient.SUBMIT_ANSWER_ULR + "/" + answer_id, storage.get_access_token(), answers_item_list.get(position).getId());
+        submitAnswerCall.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+                /*handle error globally */
+                ErrorHandler.get_instance().handle_error(response.code(), activity, null);
+                if (response.isSuccessful()) {
+                    /* success true */
+                    try {
+                        assert response.body() != null;
+                        JSONObject jsonObject = new JSONObject(response.body());
+                        boolean isSuccess = jsonObject.getBoolean("success");
+                        if (!isSuccess) {
+                            isAnswered = true;
+                            right_wrong.setImageResource(R.drawable.ic_cat_worng);
+                            //  holder.quizOptionBg.setImageResource(R.drawable.quiz_option_wrong);
+                            /*if answer is not right*/
+                            QuestionsActivity.isPlayed.put(answer_id, true);
+                            // try {
+
+                            /*if sound is available then play sound*/
+                            if (storage.getSoundState()) {
+                                Utility.play_wrong_music(activity);
+                                Utility.vibrate_phone(900, activity);
+                                /*serialize the String response  */
+                            }
+
+//
+                            holder.question_answer_name.setTextColor(activity.getResources().getColor(R.color.text_color_white));
+                                holder.img_question_overlap.setVisibility(View.VISIBLE);
+                                Glide.with(activity).load(R.drawable.answer_wrong).into(holder.img_question_overlap);
+
+                            Gson gson = new Gson();
+                            SubmitAnswer submit_answer = gson.fromJson(response.body(), SubmitAnswer.class);
+                            right_id = submit_answer.getRightAnswer().getId();
+                            notifyDataSetChanged();
+
+                        } else {
+
+                            /* if the answer is right */
+                            /* make global value isPlayed to true */
+                            QuestionsActivity.isPlayed.put(answer_id, true);
+                            String total_point = jsonObject.getString("total_point");
+                            /* set global quiz point */
+                            Utility.QUESTION_POINT = Integer.parseInt(total_point);
+
+                            right_wrong.setImageResource(R.drawable.ic_cat);
+                            /* update total point */
+                            Utility.TOTAL_POINT = Utility.TOTAL_POINT + point;
+
+                            /* increase user total point and coin */
+                            fragment_questions.TOTAL_POINT = fragment_questions.TOTAL_POINT + point;
+
+                            /*if sound options available then play the sound*/
+                            if (storage.getSoundState()) {
+                                Utility.play_right_music(activity);
+                            }
+                            isAnswered = true;
+                            holder.question_answer_name.setTextColor(activity.getResources().getColor(R.color.text_color_white));
+                            // holder.quizOptionBg.setImageResource(R.drawable.quiz_option_bg_right);
+                                holder.img_question_overlap.setVisibility(View.VISIBLE);
+                                Glide.with(activity).load(R.drawable.answer_right).into(holder.img_question_overlap);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(activity, R.string.no_data_found, Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<String> call, @NonNull Throwable throwable) {
+                /*handle network error and notify the user*/
+                if (throwable instanceof IOException) {
+                    Toast.makeText(activity, R.string.connection_timeout, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
+}

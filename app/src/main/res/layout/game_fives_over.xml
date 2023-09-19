@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey_color"
+    tools:context=".ui.activities.games.fives.GameOverActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/you_could_made"
+        android:textAlignment="center"
+        android:textColor="#fff"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_possible_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="WORD"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/layout_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/text_possible_word"
+        android:layout_centerHorizontal="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/text_view_word_count"
+            android:layout_weight="1"
+            android:text="@string/or_other"
+            android:textColor="#fff"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_word_count"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/text_view_word"
+            android:layout_weight="1"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#fff"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:text="@string/word"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_line_view_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layout_main"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="13dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_game_score_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_line_view_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/you_scored"
+        android:textColor="#fff"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_game_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_game_score_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_line_view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/text_game_score"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="24dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_play_again"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/layout_line_view_bottom"
+        android:layout_alignStart="@+id/layout_line_view_bottom"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_active_background"
+        android:text="@string/play_again"
+        android:textColor="@color/text_color_white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_go_back"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/layout_line_view_bottom"
+        android:layout_alignEnd="@+id/layout_line_view_bottom"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_disable_background"
+        android:text="@string/back"
+        android:textColor="@color/text_color_white" />
+</RelativeLayout>

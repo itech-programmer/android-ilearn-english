@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#060606</color>
+    <color name="colorAccent">#439ae1</color>
+
+    <color name="background_accent_color">#429ae2</color>
+    <color name="background_light_accent_color">#80bbec</color>
+    <color name="background_white_color">#f5f5f5</color>
+    <color name="background_light_white_color">#ffffff</color>
+    <color name="background_grey_color">#BDBDBD</color>
+    <color name="background_success_color">#3bb143</color>
+    <color name="background_wrong_color">#ff2400</color>
+
+    <!-- text color -->
+    <color name="text_color_primary">#429ae2</color>
+    <color name="text_color_white">#ffffff</color>
+    <color name="text_color_black">#000000</color>
+    <color name="text_color_grey">#707070</color>
+    <color name="content_body_color">#f5f5f5</color>
+    <color name="content_text_color">#060606</color>
+    <color name="mini_description">#707070</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- tab color -->
+    <color name="leaderboard_active">#429ae2</color>
+    <color name="leaderboard_disable">#ffffff</color>
+    <color name="leaderboard_background">#ffffff</color>
+
+    <!-- bottom navigation view color -->
+    <color name="bottom_navigation_background">#F7F7F7</color>
+    <color name="bottom_navigation_text_color">#B2B2B2</color>
+    <color name="bottom_navigation_tint_color">#B2B2B2</color>
+    <color name="bottom_navigation_selected_color">@color/colorAccent</color>
+
+</resources>
