@@ -34,6 +34,7 @@
                     android:id="@+id/text_welcome_back"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:text="@string/welcome_back"
                     android:textColor="@color/text_color_primary"
                     android:layout_marginBottom="@dimen/normal_margin"
@@ -103,17 +104,18 @@
                         android:layout_centerVertical="true"
                         android:text="@string/remember_me"
                         android:textColor="@color/text_color_black"
-                        android:textSize="@dimen/header_text_mini" />
+                        android:textSize="@dimen/header_text_mini"
+                        app:buttonTint="@color/text_color_primary"/>
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/forget_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/transparent"
-                        android:text="@string/forget_password"
-                        android:textColor="@color/text_color_black"
-                        android:textSize="@dimen/header_text_extra_mini" />
+<!--                    <androidx.appcompat.widget.AppCompatButton-->
+<!--                        android:id="@+id/forget_btn"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:text="@string/forget_password"-->
+<!--                        android:textColor="@color/text_color_black"-->
+<!--                        android:textSize="@dimen/header_text_extra_mini" />-->
 
                 </RelativeLayout>
 

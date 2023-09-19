@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import uz.qubemelon.ilearn.R;
+import uz.qubemelon.ilearn.database.Storage;
+import uz.qubemelon.ilearn.ui.fragments.auth.FragmentSignIn;
+import uz.qubemelon.ilearn.ui.fragments.auth.FragmentSignUp;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -34,11 +37,11 @@ public class AuthActivity extends AppCompatActivity {
         }
 
         /* the first is opened for first time */
-//        Storage storage = new Storage(this);
-//        storage.save_is_first_time(true);
-//
-//        /* make log in fragment as default */
-//        fragmentTransition(new FragmentSignIn());
+        Storage storage = new Storage(this);
+        storage.save_is_first_time(true);
+
+        /* make log in fragment as default */
+        fragmentTransition(new FragmentSignIn());
     }
 
     /* do fragment replace with new fragment */
@@ -52,15 +55,15 @@ public class AuthActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        if(current_fragment instanceof FragmentSignUp) {
-//            this.fragmentTransition(new FragmentSignIn());
-//        } else if (current_fragment instanceof FragmentSignIn) {
-//            count++;
-//            if (count == 1) {
-//                Toast.makeText(this, "Press again to exit!", Toast.LENGTH_SHORT).show();
-//            } else if (count == 2) {
-//                super.onBackPressed();
-//            }
-//        }
+        if(current_fragment instanceof FragmentSignUp) {
+            this.fragmentTransition(new FragmentSignIn());
+        } else if (current_fragment instanceof FragmentSignIn) {
+            count++;
+            if (count == 1) {
+                Toast.makeText(this, "Press again to exit!", Toast.LENGTH_SHORT).show();
+            } else if (count == 2) {
+                super.onBackPressed();
+            }
+        }
     }
 }

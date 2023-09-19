@@ -3,24 +3,23 @@ package uz.qubemelon.ilearn.adapters.dictionaries;
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 import android.app.Activity;
-import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.view.LayoutInflater;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import uz.qubemelon.ilearn.R;
@@ -30,12 +29,59 @@ public class DictionariesAdapter extends RecyclerView.Adapter<DictionariesAdapte
 
     /* all global field instances */
     private Activity activity;
-    private final List<DictionaryList> dictionary_list_items;
+    private List<DictionaryList> dictionary_list_items;
 
     public DictionariesAdapter(List<DictionaryList> dictionary_list_items, Activity activity) {
         this.dictionary_list_items = dictionary_list_items;
         this.activity = activity;
     }
+
+    // Clean all elements of the recycler
+    public void clear() {
+        dictionary_list_items.clear();
+        notifyDataSetChanged();
+    }
+
+    // Add a list of items -- change to type used
+    public void addAll(List<DictionaryList> list) {
+        dictionary_list_items.addAll(list);
+        notifyDataSetChanged();
+    }
+
+    // method for filtering our recyclerview items.
+    public Filter dictionary_filter_list() {
+        return dictionary_filter;
+    }
+
+    private Filter dictionary_filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<DictionaryList> filtered_list = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filtered_list.addAll(dictionary_list_items);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (DictionaryList item : dictionary_list_items) {
+                    if (item.getEnWord().toLowerCase().contains(filterPattern)) {
+                        filtered_list.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filtered_list;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            dictionary_list_items.clear();
+            dictionary_list_items.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     /* here all row layout get inflated */
     @NonNull

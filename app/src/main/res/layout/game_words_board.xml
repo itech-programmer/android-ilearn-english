@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_words_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <uz.qubemelon.ilearn.ui.activities.games.words.GameBoardLayout
+        android:id="@+id/game_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/shadow_white_portrait"
+        android:visibility="invisible">
+
+    </uz.qubemelon.ilearn.ui.activities.games.words.GameBoardLayout>
+
+    <RelativeLayout
+        android:id="@+id/word_list_label_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/txt_wordlist_label"
+            android:background="?attr/word_list" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_wordlist_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/words"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?word_list"
+            android:textSize="@dimen/word_list_title_size"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/txt_wordlist_label"
+            android:background="?attr/word_list" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grd_word_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/word_list_label_group"
+        android:horizontalSpacing="4dp"
+        android:layoutAnimation="@anim/wordsearch_layout"
+        android:numColumns="4"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:verticalSpacing="4dp" >
+
+    </GridView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/checkmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_check"
+        android:visibility="invisible" />
+
+</RelativeLayout>

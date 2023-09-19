@@ -3,10 +3,12 @@ package uz.qubemelon.ilearn.ui.fragments.auth;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import uz.qubemelon.ilearn.R;
 import uz.qubemelon.ilearn.database.Storage;
-import uz.qubemelon.ilearn.models.user.UserSignIn;
+import uz.qubemelon.ilearn.models.auth.AuthResponse;
 import uz.qubemelon.ilearn.network.ErrorHandler;
 import uz.qubemelon.ilearn.network.RetrofitClient;
 import uz.qubemelon.ilearn.network.RetrofitInterface;
@@ -43,6 +45,8 @@ public class FragmentSignIn extends Fragment {
     private Activity activity;
     private TextInputEditText edit_username, edit_password;
     private TextView text_sign_up, btn_sign_in;
+    private Button forget_btn;
+    private AuthResponse user_sign_in;
 
     public FragmentSignIn() {
         // Required empty public constructor
@@ -66,30 +70,28 @@ public class FragmentSignIn extends Fragment {
 
         init_views();
 
-        text_sign_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((AuthActivity) requireActivity())
-                        .fragmentTransition(new FragmentSignUp());
+        text_sign_up.setOnClickListener(view_sign_up -> ((AuthActivity) requireActivity())
+                .fragmentTransition(new FragmentSignUp()));
+
+        btn_sign_in.setOnClickListener(view_sign_in -> {
+            if (Utility.is_internet_available(activity)) {
+                if (Validator.validate_input_field(new EditText[]{edit_username, edit_password},
+                        activity)) {
+                    sign_in(Objects.requireNonNull(edit_username.getText()).toString().trim(),
+                            Objects.requireNonNull(edit_password.getText()).toString().trim());
+                }
+            } else {
+                Toast.makeText(activity,
+                        R.string.no_internet,
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
-        btn_sign_in.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (Utility.is_internet_available(activity)) {
-                    if (Validator.validate_input_field(new EditText[]{edit_username, edit_password},
-                            activity)) {
-                        sign_in(Objects.requireNonNull(edit_username.getText()).toString().trim(),
-                                Objects.requireNonNull(edit_password.getText()).toString().trim());
-                    }
-                } else {
-                    Toast.makeText(activity,
-                            R.string.no_internet,
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        /* change password button click */
+//        forget_btn.setOnClickListener(view_forget_password -> {
+//            ((AuthActivity) requireActivity())
+//                    .fragmentTransition(new FragmentForgotPassword());
+//        });
     }
 
     /* sign in in api call */
@@ -97,7 +99,7 @@ public class FragmentSignIn extends Fragment {
         Storage storage = new Storage(activity);
         ProgressDialog dialog = Utility.show_dialog(activity);
         RetrofitInterface retrofit_interface = RetrofitClient.get_retrofit().create(RetrofitInterface.class);
-        Call<String> do_login_call = retrofit_interface.doLogin(username, password);
+        Call<String> do_login_call = retrofit_interface.do_login(username, password);
         do_login_call.enqueue(new Callback<String>() {
 
             @Override
@@ -114,12 +116,13 @@ public class FragmentSignIn extends Fragment {
                         if (isSuccess) {
                             /* serialize the String response */
                             Gson gson = new Gson();
-                            UserSignIn user_sign_in = gson.fromJson(response.body(), UserSignIn.class);
+                            user_sign_in = gson.fromJson(response.body(), AuthResponse.class);
 
                             /* save the user data to local storage */
-                            storage.save_access_type(user_sign_in.getAccessType());
                             storage.save_access_token(user_sign_in.getAccessToken());
+                            storage.save_access_type(user_sign_in.getAccessType());
                             storage.save_sign_in_sate(true);
+                            storage.save_lesson_id(user_sign_in.getUser().getId());
                             storage.save_full_name(user_sign_in.getUser().getFullName());
                             storage.save_user_total_point(Integer.parseInt(user_sign_in.getTotalPoint()));
 

@@ -25,7 +25,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import uz.qubemelon.ilearn.R;
 import uz.qubemelon.ilearn.database.Storage;
-import uz.qubemelon.ilearn.models.courses.CourseResponse;
+import uz.qubemelon.ilearn.models.APIResponse;
 import uz.qubemelon.ilearn.network.ErrorHandler;
 import uz.qubemelon.ilearn.network.RetrofitClient;
 import uz.qubemelon.ilearn.network.RetrofitInterface;
@@ -38,7 +38,7 @@ public class FivesGameActivity extends AppCompatActivity implements View.OnClick
     private AppCompatActivity activity;
     private TextView text_best;
     private Button btn_back, btn_play;
-    private CourseResponse fives_game_response;
+    private APIResponse fives_game_response;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class FivesGameActivity extends AppCompatActivity implements View.OnClick
                         if (isSuccess) {
                             /* serialize the String response */
                             Gson gson = new Gson();
-                            fives_game_response = gson.fromJson(response.body(), CourseResponse.class);
+                            fives_game_response = gson.fromJson(response.body(), APIResponse.class);
 
                             /* save the category response for offline uses */
                             storage.save_fives_game_score(fives_game_response.getFivesGame().getFivesGameScore());

@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ilearn"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="n">
         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <!--        <meta-data-->
@@ -23,13 +24,22 @@
         <!--            android:value="@string/admob_banner_id"/>-->
         <activity
             android:name=".ui.activities.HomeActivity"
+            android:theme="@style/Theme.ilearn"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:theme="@style/Theme.ilearn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activities.AuthActivity"
+            android:theme="@style/Theme.ilearn" />
         <activity
             android:name=".ui.activities.games.fives.FivesGameActivity"
             android:theme="@style/Theme.ilearn"/>
@@ -40,19 +50,46 @@
             android:name=".ui.activities.games.fives.GameOverActivity"
             android:theme="@style/Theme.ilearn"/>
         <activity
+            android:name=".ui.activities.games.words.WordsGameActivity"
+            android:theme="@style/Theme.ilearn"/>
+        <activity
+            android:name=".ui.activities.games.words.GameBoardActivity"
+            android:theme="@style/Theme.ilearn"/>
+        <activity
+            android:name=".ui.activities.games.words.WordsGameInfoActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name=".ui.activities.games.words.WordsGameSettingsActivity"
+            android:theme="@style/Theme.ilearn"/>
+        <activity
             android:name=".ui.activities.lessons.vocabulary.VocabularyLessonsListActivity"
             android:theme="@style/Theme.ilearn"/>
         <activity
             android:name=".ui.activities.lessons.grammar.GrammarLessonsListActivity"
             android:theme="@style/Theme.ilearn"/>
         <activity
-            android:name=".ui.activities.lessons.LessonActivity"
+            android:name=".ui.activities.lessons.VocabularyLessonActivity"
             android:theme="@style/Theme.ilearn"/>
         <activity
-            android:name=".ui.activities.exercises.ExerciseActivity"
+            android:name=".ui.activities.lessons.GrammarLessonActivity"
             android:theme="@style/Theme.ilearn"/>
         <activity
-            android:name=".ui.activities.questions.QuestionsActivity"
+            android:name=".ui.activities.exercises.VocabularyExerciseActivity"
+            android:theme="@style/Theme.ilearn"/>
+        <activity
+            android:name=".ui.activities.exercises.GrammarExerciseActivity"
+            android:theme="@style/Theme.ilearn"/>
+        <activity
+            android:name=".ui.activities.questions.VocabularyQuestionsActivity"
+            android:parentActivityName=".ui.activities.HomeActivity"
+            android:theme="@style/Theme.ilearn"/>
+        <activity
+            android:name=".ui.activities.questions.GrammarQuestionsActivity"
+            android:parentActivityName=".ui.activities.HomeActivity"
+            android:theme="@style/Theme.ilearn"/>
+        <activity
+            android:name=".ui.activities.SettingActivity"
+            android:parentActivityName=".ui.activities.HomeActivity"
             android:theme="@style/Theme.ilearn"/>
     </application>
 

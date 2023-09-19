@@ -12,14 +12,17 @@ public class Profile {
     @SerializedName("full_name")
     private String full_name;
 
+    @SerializedName("username")
+    private String username;
+
     @SerializedName("avatar")
     private String avatar;
 
+    @SerializedName("total_point")
+    private String total_point;
+
     @SerializedName("ranking")
     private int ranking;
-
-    @SerializedName("point")
-    private String point;
 
     @SerializedName("participated_questions")
     private int participated_questions;
@@ -27,6 +30,8 @@ public class Profile {
     @SerializedName("daily_score")
     private List<DailyScore> daily_score;
 
+    @SerializedName("language")
+    private String language;
 
     public int getUserId() {
         return user_id;
@@ -36,16 +41,20 @@ public class Profile {
         return full_name;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
     public String getAvatar() {
         return avatar;
     }
 
-    public int getRanking() {
-        return ranking;
+    public String getTotalPoint() {
+        return total_point;
     }
 
-    public String getPoint() {
-        return point;
+    public int getRanking() {
+        return ranking;
     }
 
     public int getParticipatedQuestions() {
@@ -54,5 +63,9 @@ public class Profile {
 
     public List<DailyScore> getDailyScore(){
         return daily_score;
+    }
+
+    public String getLanguage(){
+        return language;
     }
 }

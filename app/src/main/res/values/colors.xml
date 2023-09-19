@@ -21,6 +21,7 @@
     <color name="content_text_color">#060606</color>
     <color name="mini_description">#707070</color>
     <color name="transparent">#00000000</color>
+    <color name="transparent_black">#66000000</color>
 
     <!-- tab color -->
     <color name="leaderboard_active">#429ae2</color>

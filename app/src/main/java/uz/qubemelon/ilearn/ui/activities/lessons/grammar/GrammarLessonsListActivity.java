@@ -25,9 +25,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import uz.qubemelon.ilearn.R;
-import uz.qubemelon.ilearn.adapters.courses.lessons.LessonsAdapter;
+import uz.qubemelon.ilearn.adapters.courses.lessons.GrammarLessonsAdapter;
 import uz.qubemelon.ilearn.database.Storage;
-import uz.qubemelon.ilearn.models.courses.CourseResponse;
+import uz.qubemelon.ilearn.models.APIResponse;
 import uz.qubemelon.ilearn.network.ErrorHandler;
 import uz.qubemelon.ilearn.network.RetrofitClient;
 import uz.qubemelon.ilearn.network.RetrofitInterface;
@@ -41,8 +41,8 @@ public class GrammarLessonsListActivity extends AppCompatActivity {
     private int CHAPTER_ID;
     private TextView text_total_point;
     private ImageView image_back, image_total_point;
-    public CourseResponse lessons_list;
-    private LessonsAdapter lessons_adapter;
+    public APIResponse lessons_list;
+    private GrammarLessonsAdapter lessons_adapter;
     private RecyclerView lessons_recyclerview;
 
     @Override
@@ -60,7 +60,7 @@ public class GrammarLessonsListActivity extends AppCompatActivity {
         /* do api call here and set data to the recycler view */
 
         /* get the question id from intent and pass it to the getQuestionList function to do the api call for question list */
-        CHAPTER_ID = getIntent().getIntExtra(Utility.GRAMMAR_CHAPTER, lessons_storage.get_grammar_chapter_id());
+        CHAPTER_ID = getIntent().getIntExtra(Utility.GRAMMAR_CHAPTER, lessons_storage.get_chapter_id());
 
             /* if there is internet call get data from server, otherwise load for local response */
             if (Utility.is_internet_available(GrammarLessonsListActivity.this)) {
@@ -70,10 +70,10 @@ public class GrammarLessonsListActivity extends AppCompatActivity {
                     /* load data from offline */
                     /* serialize the String response */
                     Gson gson = new Gson();
-                    CourseResponse lesson_list = gson.fromJson(lessons_storage.get_grammar_lessons_response(), CourseResponse.class);
+                    APIResponse lesson_list = gson.fromJson(lessons_storage.get_grammar_lessons_response(), APIResponse.class);
                     /* add the data to the recycler view */
                     if (lesson_list.getLessonList() != null)
-                        lessons_adapter = new LessonsAdapter(GrammarLessonsListActivity.this, lesson_list.getLessonList());
+                        lessons_adapter = new GrammarLessonsAdapter(GrammarLessonsListActivity.this, lesson_list.getLessonList());
                     lessons_recyclerview.setLayoutManager(new LinearLayoutManager(context));
                     lessons_recyclerview.setItemAnimator(new DefaultItemAnimator());
                     lessons_recyclerview.setAdapter(lessons_adapter);
@@ -105,10 +105,10 @@ public class GrammarLessonsListActivity extends AppCompatActivity {
                             storage.save_grammar_lessons_response(response.body());
                             /* serialize the String response */
                             Gson gson = new Gson();
-                            lessons_list = gson.fromJson(response.body(), CourseResponse.class);
+                            lessons_list = gson.fromJson(response.body(), APIResponse.class);
 
                             /* add the data to the recycler view */
-                            lessons_adapter = new LessonsAdapter(GrammarLessonsListActivity.this, lessons_list.getLessonList());
+                            lessons_adapter = new GrammarLessonsAdapter(GrammarLessonsListActivity.this, lessons_list.getLessonList());
                             lessons_recyclerview.setLayoutManager(new LinearLayoutManager(context));
                             lessons_recyclerview.setItemAnimator(new DefaultItemAnimator());
                             lessons_recyclerview.setAdapter(lessons_adapter);

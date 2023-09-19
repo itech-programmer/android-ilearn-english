@@ -3,13 +3,13 @@ package uz.qubemelon.ilearn.ui.fragments;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,10 +33,11 @@ import retrofit2.Response;
 import uz.qubemelon.ilearn.R;
 import uz.qubemelon.ilearn.adapters.LeaderboardAdapter;
 import uz.qubemelon.ilearn.database.Storage;
-import uz.qubemelon.ilearn.models.courses.CourseResponse;
+import uz.qubemelon.ilearn.models.APIResponse;
 import uz.qubemelon.ilearn.network.ErrorHandler;
 import uz.qubemelon.ilearn.network.RetrofitClient;
 import uz.qubemelon.ilearn.network.RetrofitInterface;
+import uz.qubemelon.ilearn.ui.activities.AuthActivity;
 import uz.qubemelon.ilearn.utilities.Utility;
 
 public class FragmentLeaderboard extends Fragment implements View.OnClickListener {
@@ -49,9 +50,10 @@ public class FragmentLeaderboard extends Fragment implements View.OnClickListene
     private LeaderboardAdapter leaderboard_adapter;
     private LinearLayoutCompat layout_all, layout_daily, layout_weekly;
     private RelativeLayout layout_message;
-    private TextView text_all, text_all_user , text_daily, text_daily_top, text_weekly, text_weekly_top;
+    private TextView text_all, text_all_user , text_daily, text_daily_top, text_weekly, text_weekly_top, total_point;
+    private ImageView image_logout;
     private RecyclerView leaderboard_recycler_view;
-    private CourseResponse leaderboard_list;
+    private APIResponse leaderboard_list;
 
     public FragmentLeaderboard() {
         // Required empty public constructor
@@ -73,9 +75,23 @@ public class FragmentLeaderboard extends Fragment implements View.OnClickListene
         super.onViewCreated(view, savedInstanceState);
 
         init_views();
-//        Storage storage = new Storage(activity);
-//        text_total_point.setText(String.valueOf(storage.get_user_total_point()));
+
+        Storage storage = new Storage(activity);
+
+        if (storage.get_user_total_point() != 0){
+            total_point.setText(String.valueOf(storage.get_user_total_point()));
+        }
+
         get_leader_board_data(ALL);
+
+        image_logout.setOnClickListener(view_logout -> {
+            /* change the state of the logged in to log out for the current user */
+            storage.save_sign_in_sate(false);
+            /* take the current user to the log in page */
+            Intent intent = new Intent(activity, AuthActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        });
     }
 
     private void get_leader_board_data(int type) {
@@ -105,7 +121,9 @@ public class FragmentLeaderboard extends Fragment implements View.OnClickListene
                             leaderboard_recycler_view.setVisibility(View.VISIBLE);
                             /* serialize the String response */
                             Gson gson = new Gson();
-                            leaderboard_list = gson.fromJson(response.body(), CourseResponse.class);
+                            leaderboard_list = gson.fromJson(response.body(), APIResponse.class);
+                            storage.save_user_total_point(leaderboard_list.getTotalPoint());
+                            total_point.setText(String.valueOf(leaderboard_list.getTotalPoint()));
                             leaderboard_adapter = new LeaderboardAdapter(leaderboard_list.getLeaderboardList(), activity);
                             leaderboard_recycler_view.setAdapter(leaderboard_adapter);
                             Utility.dismiss_dialog(dialog);
@@ -211,6 +229,8 @@ public class FragmentLeaderboard extends Fragment implements View.OnClickListene
     private void init_views() {
         View view = getView();
         if (view != null) {
+            total_point = view.findViewById(R.id.text_total_point);
+            image_logout = view.findViewById(R.id.image_logout);
             layout_all = view.findViewById(R.id.layout_all);
             layout_all.setOnClickListener(this);
             layout_daily = view.findViewById(R.id.layout_daily);

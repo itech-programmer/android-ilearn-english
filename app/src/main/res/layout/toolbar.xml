@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
@@ -25,6 +25,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@android:color/transparent"
+                android:layout_margin="4dp"
                 android:padding="2dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_point"
@@ -43,12 +44,13 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_total_point"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:text="@string/title_zero"
-                android:textSize="18sp"
+                android:textSize="21sp"
                 android:textStyle="bold"
                 android:visibility="visible"/>
 
@@ -66,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:text="@string/app_name"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="40sp"
@@ -81,8 +84,8 @@
             android:gravity="center_vertical|end"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn_logout"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_logout"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:background="@android:color/transparent"
@@ -90,26 +93,6 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_logout"
                 android:visibility="visible"/>
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn_edit_profile"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@android:color/transparent"
-                android:padding="2dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_edit"
-                android:visibility="gone" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn_settings"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@android:color/transparent"
-                android:padding="2dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_settings"
-                android:visibility="gone" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>

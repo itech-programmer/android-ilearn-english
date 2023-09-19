@@ -20,4 +20,18 @@
     <dimen name="header_text_mini">18sp</dimen>
     <dimen name="header_text_extra_mini">12sp</dimen>
     <dimen name="description_text_size">15sp</dimen>
+
+    <dimen name="standard_0">0dp</dimen>
+    <dimen name="standard_settings_layout">35dp</dimen>
+    <dimen name="standard_avatar_layout">20dp</dimen>
+    <dimen name="standard_profile_layout">5dp</dimen>
+
+    <dimen name="intro_body_margin">10dp</dimen>
+    <dimen name="intro_button_margin">5dp</dimen>
+    <dimen name="intro_button_margin_land">10dp</dimen>
+    <dimen name="welcome_text_size">14sp</dimen>
+    <dimen name="circle_button_padding">18dp</dimen>
+    <dimen name="letter_size">16sp</dimen>
+    <dimen name="word_list_title_size">16sp</dimen>
+    <dimen name="word_size">12sp</dimen>
 </resources>

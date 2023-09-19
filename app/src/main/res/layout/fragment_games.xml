@@ -45,19 +45,19 @@
                 tools:targetApi="lollipop">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/image_"
+                    android:id="@+id/image_fives"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/word_game_logo"
-                    app:srcCompat="@drawable/word_game_logo" />
+                    android:src="@drawable/fives_game_logo"
+                    app:srcCompat="@drawable/fives_game_logo" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/text_word_game"
+                    android:id="@+id/text_fives_game"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@+id/image_"
+                    android:layout_toEndOf="@+id/image_fives"
                     android:text="@string/fives"
                     android:textColor="#000"
                     android:textSize="26sp"
@@ -65,17 +65,61 @@
                     tools:ignore="RelativeOverlap" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/text_word_game_description"
+                    android:id="@+id/text_fives_game_description"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/text_word_game"
+                    android:layout_below="@+id/text_fives_game"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="5dp"
-                    android:layout_toEndOf="@+id/image_"
+                    android:layout_toEndOf="@+id/image_fives"
                     android:text="@string/word_game_description"
                     android:textSize="16sp" />
 
             </RelativeLayout>
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/layout_words_game"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/game_background"-->
+<!--                android:elevation="8dp"-->
+<!--                android:padding="5dp"-->
+<!--                tools:targetApi="lollipop">-->
+
+<!--                <androidx.appcompat.widget.AppCompatImageView-->
+<!--                    android:id="@+id/image_words"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:src="@drawable/word_game_logo"-->
+<!--                    app:srcCompat="@drawable/word_game_logo" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/text_word_game"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_toEndOf="@+id/image_words"-->
+<!--                    android:text="@string/words"-->
+<!--                    android:textColor="#000"-->
+<!--                    android:textSize="26sp"-->
+<!--                    app:fontFamily="sans-serif-medium"-->
+<!--                    tools:ignore="RelativeOverlap" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/text_word_game_description"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_below="@+id/text_word_game"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginEnd="5dp"-->
+<!--                    android:layout_toEndOf="@+id/image_words"-->
+<!--                    android:text="@string/word_game_description"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </RelativeLayout>-->
+
         </LinearLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

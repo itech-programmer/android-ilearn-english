@@ -1,0 +1,84 @@
+<resources>
+
+    <string-array name="board_size_labels">
+        <item>5x5</item>
+        <item>6x6</item>
+        <item>7x7</item>
+        <item>8x8</item>
+        <item>9x9</item>
+        <item>10x10</item>
+        <item>11x11</item>
+        <item>12x12</item>
+        <item>13x13</item>
+        <item>14x14</item>
+        <item>15x15</item>
+    </string-array>
+
+    <string-array name="board_size_values">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    
+    
+    <string-array name="language_names">
+        <item>English</item>
+        <item>Türkçe</item>
+        <item>Deutsch</item>
+        <item>Español</item>
+        <item>Čeština</item>
+        <item>Dansk</item>
+        <item>Ελληνικά</item>
+        <item>Suomi</item>
+        <item>Français</item>
+        <item>Magyar</item>
+        <item>Italiano</item>
+        <item>Nederlands</item>
+        <item>Polski</item>
+        <item>Português</item>
+        <item>Română</item>
+        <item>Pусский</item>
+        <item>Svenska</item>
+    </string-array>
+    
+    <string-array name="language_codes">
+        <item>en</item>
+        <item>tr</item>
+        <item>de</item>
+        <item>es</item>
+        <item>cs</item>
+        <item>da</item>
+        <item>el</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>hu</item>
+        <item>it</item>
+        <item>nl</item>
+        <item>pl</item>
+        <item>pt</item>
+        <item>ro</item>
+        <item>ru</item>
+        <item>sv</item>
+    </string-array>
+    
+    
+    <string-array name="num_words_select">
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+    </string-array>
+    
+    
+    
+</resources>

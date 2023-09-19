@@ -19,7 +19,7 @@ public class CheckPermissionServices {
 
     // CHECK PERMISSIONS -------------------------------------------------------------------------
 
-    public boolean checkPermissionForReadExternalStorage() {
+    public boolean check_permission_for_read_external_storage() {
         int result = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE);
         if (result == PackageManager.PERMISSION_GRANTED) {
             return true;
@@ -28,7 +28,7 @@ public class CheckPermissionServices {
         }
     }
 
-    public boolean checkPermissionForWriteExternalStorage() {
+    public boolean check_permission_for_write_external_storage() {
         int result = ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (result == PackageManager.PERMISSION_GRANTED) {
             return true;
@@ -38,7 +38,7 @@ public class CheckPermissionServices {
     }
 
     // REQUEST PERMISSIONS -------------------------------------------------------------------------
-    public void requestPermissionForReadExternalStorage() {
+    public void permission_request_for_read_external_storage() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.READ_EXTERNAL_STORAGE)) {
             Toast.makeText(activity, "External Storage permission needed. Please allow in App Settings for additional functionality.", Toast.LENGTH_LONG).show();
         } else {
@@ -46,11 +46,12 @@ public class CheckPermissionServices {
         }
     }
 
-    public void requestPermissionForWriteExternalStorage() {
+    public void permission_request_for_write_external_storage() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             Toast.makeText(activity, "External Storage permission needed. Please allow in App Settings for additional functionality.", Toast.LENGTH_LONG).show();
         } else {
             ActivityCompat.requestPermissions(activity, new String[]{ Manifest.permission.WRITE_EXTERNAL_STORAGE}, 4);
         }
     }
+
 }

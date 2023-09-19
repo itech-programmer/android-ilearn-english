@@ -3,103 +3,93 @@
     <!-- ARRAY OF ENGLISH WORDS -->
     <string-array name="words">
         <item>.ALERT.LATER.ALTER</item>
-        <item>.ABETS.BEATS.BEAST</item>
-        <item>.ANGEL.ANGLE.GLEAN</item>
-        <item>.COATS.COAST.TACOS</item>
+        <item>.BEATS.BEAST</item>
+        <item>.ANGEL.ANGLE</item>
+        <item>.COATS.COAST</item>
         <item>.RATES.STARE.TEARS</item>
-        <item>.BRAKE.BAKER.BREAK</item>
-        <item>.BARED.BREAD.BEARD</item>
-        <item>.BEGIN.BEING.BINGE</item>
-        <item>.BELOW.BOWEL.ELBOW</item>
-        <item>.BORES.ROBES.SOBER</item>
-        <item>.PACES.SPACE.CAPES</item>
-        <item>.CRATE.TRACE.CATER</item>
-        <item>.CLAPS.CLASP.SCALP</item>
-        <item>.CRUEL.LUCRE.ULCER</item>
-        <item>.RATED.TRADE.TREAD</item>
-        <item>.DATES.SATED.STEAD</item>
+        <item>.BAKER.BREAK</item>
+        <item>.BREAD.BEARD</item>
+        <item>.BEGIN.BEING</item>
+        <item>.BELOW.ELBOW</item>
+        <item>.BORES.ROBES</item>
+        <item>.PACES.SPACE</item>
+        <item>.TRACE.CATER</item>
+        <item>.CLAPS.CLASP</item>
+        <item>.CRUEL.ULCER</item>
+        <item>.TRADE.TREAD</item>
+        <item>.DATES.STEAD</item>
         <item>.EDITS.SITED.TIDES</item>
         <item>.EARNS.NEARS.SNARE</item>
         <item>.EARTH.HATER.HEART</item>
-        <item>.ITEMS.EMITS.TIMES</item>
-        <item>.TREES.STEER.TERSE</item>
-        <item>.THERE.THREE.ETHER</item>
+        <item>.ITEMS.TIMES</item>
+        <item>.TREES.STEER</item>
+        <item>.THERE.THREE</item>
         <item>.HEARS.SHARE.HARES</item>
-        <item>.PHASE.SHAPE.HEAPS</item>
+        <item>.PHASE.SHAPE</item>
         <item>.HEROS.HORSE.SHORE</item>
-        <item>.LEAPS.PALES.LAPSE</item>
+        <item>.LEAPS.PALES</item>
         <item>.TENOR.TONER.NOTER</item>
         <item>.NOTES.STONE.TONES</item>
         <item>.PANEL.PLANE.PENAL</item>
-        <item>.PARTS.STRAP.TRAPS</item>
-        <item>.SPARE.PARSE.SPEAR</item>
-        <item>.SLEPT.PELTS.SPELT</item>
-        <item>.SPIRE.PIERS.PRIES</item>
-        <item>.PINES.SPINE.SNIPE</item>
-        <item>.SAINT.SATIN.STAIN</item>
+        <item>.PARTS.TRAPS</item>
+        <item>.SPARE</item>
+        <item>.SAINT</item>
         <item>.SERVE.SEVER.VERSE</item>
-        <item>.STATE.TASTE.TEATS</item>
-        <item>.WEIRD.WIRED.WIDER</item>
+        <item>.STATE.TASTE</item>
+        <item>.WEIRD.WIRED</item>
         <item>.WORDS.SWORD</item>
         <item>.ALLOY</item>
-        <item>.ATOMY</item>
         <item>.BAKED</item>
         <item>.BALLS</item>
         <item>.BEACH</item>
         <item>.BEAST</item>
-        <item>.BESTS</item>
         <item>.BELLS</item>
-        <item>.DOZEN.ZONED</item>
-        <item>.DRIER.RIDER</item>
+        <item>.DOZEN</item>
+        <item>.RIDER</item>
         <item>.EAGER.AGREE</item>
         <item>.EXIST.EXITS</item>
-        <item>.FIBER.BRIEF</item>
+        <item>.BRIEF</item>
         <item>.FIELD.FILED</item>
-        <item>.FLEES.FEELS</item>
-        <item>.FLESH.SHELF</item>
-        <item>.FREAK.FAKER</item>
-        <item>.FREED.DEFER</item>
+        <item>.FEELS</item>
+        <item>.SHELF</item>
         <item>.FRIES.FIRES</item>
         <item>.FUELS.FLUES</item>
-        <item>.LARGE.GLARE</item>
-        <item>.GREAT.GRATE</item>
+        <item>.LARGE</item>
+        <item>.GREAT</item>
         <item>.HALLS.SHALL</item>
         <item>.HATED.DEATH</item>
-        <item>.HIKES.SHEIK</item>
-        <item>.SHOCK.HOCKS</item>
+        <item>.HIKES</item>
+        <item>.SHOCK</item>
         <item>.HOOKS.SHOOK</item>
-        <item>.SHOES.HOSES</item>
-        <item>.IDEAS.AIDES</item>
+        <item>.SHOES</item>
+        <item>.IDEAS</item>
         <item>.INFER.FINER</item>
         <item>.SKILL.KILLS</item>
         <item>.LAMBS.BALMS</item>
         <item>.LAYER.EARLY.RELAY</item>
-        <item>.LEEKS.KEELS.SLEEK</item>
-        <item>.LICKS.SLICK</item>
-        <item>.LISTS.SILTS.SLITS</item>
-        <item>.RULED.LURED</item>
-        <item>.RULES.LURES</item>
+        <item>.LISTS</item>
+        <item>.RULED</item>
+        <item>.RULES</item>
         <item>.MARCH.CHARM</item>
         <item>.MEALS.MALES</item>
         <item>.LEMON.MELON</item>
         <item>.SMELT.MELTS</item>
-        <item>.MOIST.OMITS</item>
         <item>.SNAIL.NAILS</item>
-        <item>.NEEDS.DENSE</item>
+        <item>.NEEDS</item>
         <item>.NIGHT.THING</item>
         <item>.OCEAN.CANOE</item>
         <item>.PLANE.PANEL</item>
         <item>.PARKS.SPARK</item>
         <item>.SPEAK.PEAKS</item>
-        <item>.PEDAL.PLEAD</item>
-        <item>.POOLS.LOOPS.SPOOL</item>
-        <item>.SPORT.PORTS</item>
+        <item>.PEDAL</item>
+        <item>.POOLS</item>
+        <item>.SPORT</item>
         <item>.QUIET.QUITE</item>
-        <item>.RACES.CARES.ACRES</item>
+        <item>.RACES.CARES</item>
         <item>.BORED.ROBED</item>
-        <item>.SOBER.BORES.ROBES</item>
-        <item>.ROCKS.CORKS</item>
-        <item>.ROPES.SPORE.PORES</item>
+        <item>.BORES.ROBES</item>
+        <item>.ROCKS</item>
+        <item>.ROPES</item>
         <item>.ROSES.SORES</item>
         <item>.TURNS.RUNTS</item>
         <item>.LASTS.SALTS</item>
@@ -108,45 +98,36 @@
         <item>.SOUTH.SHOUT</item>
         <item>.BRUSH.SHRUB</item>
         <item>.SKINS.SINKS</item>
-        <item>.SIREN.RESIN.RISEN</item>
-        <item>.DISKS.SKIDS</item>
-        <item>.NAILS.SNAIL.SLAIN</item>
-        <item>.SMILE.LIMES.MILES</item>
-        <item>.SMASH.SHAMS</item>
+        <item>.SIREN.RISEN</item>
+        <item>.DISKS</item>
+        <item>.NAILS.SNAIL</item>
+        <item>.SMILE.MILES</item>
+        <item>.SMASH</item>
         <item>.SMELT.MELTS</item>
-        <item>.SNAPS.SPANS</item>
-        <item>.SPINS.SNIPS</item>
-        <item>.PILLS.SPILL</item>
+        <item>.SPINS</item>
+        <item>.PILLS</item>
         <item>.SPOTS.STOPS.POSTS</item>
         <item>.SPRAY.PRAYS</item>
-        <item>.STACK.TACKS</item>
-        <item>.STALK.TALKS</item>
-        <item>.STICK.TICKS</item>
-        <item>.TILTS.STILT</item>
+        <item>.STACK</item>
+        <item>.TALKS</item>
         <item>.PARTS.STRAP.TRAPS</item>
-        <item>.STRIP.TRIPS</item>
         <item>.STUDY.DUSTY</item>
         <item>.URGES.SURGE</item>
         <item>.WELLS.SWELL</item>
         <item>.SWING.WINGS</item>
         <item>.SWIPE.WIPES</item>
-        <item>.ATTIC.TACIT</item>
-        <item>.MATED.TAMED</item>
-        <item>.TIMES.MITES.ITEMS</item>
+        <item>.TIMES.ITEMS</item>
         <item>.TIRED.TRIED</item>
         <item>.NOTED.TONED</item>
-        <item>.SMART.TRAMS.MARTS</item>
-        <item>.TUTOR.TROUT</item>
-        <item>.UNITE.UNTIE</item>
-        <item>.UNTIL.UNLIT</item>
+        <item>.SMART.TRAMS</item>
+        <item>.TUTOR</item>
+        <item>.UNITE</item>
+        <item>.UNTIL</item>
         <item>.SAVES.VASES</item>
-        <item>.LIVES.VEILS</item>
-        <item>.VEINS.VINES</item>
+        <item>.LIVES</item>
         <item>.VERSE.SERVE</item>
-        <item>.VIRAL.RIVAL</item>
-        <item>.VOTES.STOVE</item>
+        <item>.VOTES</item>
         <item>.WAIST.WAITS</item>
         <item>.STRAW.WARTS</item>
-        <item>.WASTE.SWEAT</item>
     </string-array>
 </resources>

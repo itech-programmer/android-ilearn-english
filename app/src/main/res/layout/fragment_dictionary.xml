@@ -14,7 +14,7 @@
         android:layout_height="?actionBarSize"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"/>
+        android:layout_marginEnd="15dp" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/layout"
@@ -30,47 +30,44 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/image"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:src="@drawable/background_search" />-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/background_search"
+                android:visibility="gone"/>
 
-<!--            <androidx.appcompat.widget.AppCompatEditText-->
-<!--                android:id="@+id/search_bar"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="@dimen/small_margin"-->
-<!--                android:layout_marginTop="@dimen/small_margin"-->
-<!--                android:layout_marginEnd="@dimen/small_margin"-->
-<!--                android:background="@drawable/btn_border"-->
-<!--                android:drawableEnd="@drawable/ic_search_black"-->
-<!--                android:hint="@string/search"-->
-<!--                android:importantForAutofill="no"-->
-<!--                android:inputType="text"-->
-<!--                android:paddingStart="@dimen/small_padding"-->
-<!--                android:paddingTop="@dimen/extra_small_padding"-->
-<!--                android:paddingEnd="@dimen/small_padding"-->
-<!--                android:paddingBottom="@dimen/extra_small_padding"-->
-<!--                android:textSize="26sp" />-->
 
-<!--            <androidx.appcompat.widget.AppCompatTextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:layout_below="@id/search_bar"-->
-<!--                android:gravity="center_horizontal"-->
-<!--                android:text="@string/what_do_you_want_to_learn"-->
-<!--                android:textSize="20sp" />-->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:theme="@style/search_view_animation"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/search_bar"
+                android:gravity="center_horizontal"
+                android:text="@string/what_do_you_want_to_learn"
+                android:textSize="20sp"
+                android:visibility="gone"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dictionary_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_below="@+id/search_bar"
                 android:padding="10dp"
-                android:layout_marginTop="5dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         </RelativeLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>

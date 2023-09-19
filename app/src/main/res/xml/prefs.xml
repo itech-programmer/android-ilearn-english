@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <ListPreference
+        android:entries="@array/language_names"
+        android:entryValues="@array/language_codes"
+
+        android:key="@string/pref_key_language"
+        android:summary="@string/pref_summary_language"
+        android:title="@string/pref_title_language" />
+
+    <ListPreference
+        android:defaultValue="10"
+        android:entries="@array/board_size_labels"
+        android:entryValues="@array/board_size_values"
+        android:key="@string/pref_key_grid_size"
+        android:summary="@string/pref_summary_gridsize"
+        android:title="@string/pref_title_gridsize" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/pref_allow_substring"
+        android:summary="@string/pref_summary_allow_substring"
+        android:title="@string/pref_title_allow_substring"/>
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/pref_disable_screen_lock"
+        android:summary="@string/pref_summary_screen_lock"
+        android:title="@string/pref_title_screen_lock"/>
+
+
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/pref_key_line_color_mode"
+        android:summary="@string/pref_summary_line_color"
+        android:title="@string/pref_title_line_color" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:dependency="@string/pref_key_line_color_mode"
+        android:key="@string/pref_key_line_color"
+        android:title="@string/pref_title_pencil_color"
+        android:summary="@string/pref_summary_pencil_color"
+        android:defaultValue="@color/background_accent_color" />
+
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="@string/pref_key_rounded_line"
+        android:summary="@string/pref_summary_pencil_corner"
+        android:title="@string/pref_title_pencil_corner"/>
+
+
+
+
+
+
+    <ListPreference
+        android:defaultValue="1000"
+        android:entries="@array/num_words_select"
+        android:entryValues="@array/num_words_select"
+        android:key="@string/pref_key_num_words_to_select"
+        android:summary="@string/pref_summary_num_words"
+        android:title="@string/pref_title_num_words" />
+
+
+</PreferenceScreen>

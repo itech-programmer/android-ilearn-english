@@ -62,7 +62,7 @@
                     android:padding="5dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/text_total_point"
+                        android:id="@+id/text_user_total_point"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/title_zero"
@@ -148,7 +148,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="@string/challenges"
+                        android:text="@string/completed_tasks"
                         android:textAlignment="center"
                         android:textSize="14sp" />
 
@@ -190,4 +190,126 @@
         android:layout_marginBottom="-60dp"
         android:background="@drawable/round_image_background" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/fab_background_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/settings_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:layout_behavior=".utilities.design.FabButtonMoveUpwardBehavior"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/edit_avatar_layout"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/account_settings"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_settings"
+                    app:fabSize="mini"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit_avatar_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:layout_behavior=".utilities.design.FabButtonMoveUpwardBehavior"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/edit_profile_layout"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/edit_avatar"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_edit_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_user"
+                    app:fabSize="mini"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit_profile_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:layout_behavior=".utilities.design.FabButtonMoveUpwardBehavior"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/edit_layout"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/edit_profile"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_edit"
+                    app:fabSize="mini"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="?attr/actionBarSize"
+                app:layout_behavior=".utilities.design.FabButtonMoveUpwardBehavior">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floating_action_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small_margin"
+                    android:gravity="center_vertical"
+                    app:fabSize="normal"
+                    app:srcCompat="@drawable/ic_plus" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
 </RelativeLayout>

@@ -6,7 +6,7 @@
 
     <stroke
         android:color="@color/background_accent_color"
-        android:width="0.1dp" />
+        android:width="1dp" />
 
     <corners android:topLeftRadius="46dp"
         android:topRightRadius="46dp"

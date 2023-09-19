@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/background_accent_color"
     android:orientation="vertical"
-    tools:context=".ui.fragments.questions.FragmentQuestions">
+    tools:context=".ui.fragments.questions.FragmentVocabularyQuestions">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/toolbar"
@@ -169,7 +169,7 @@
 
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
-                            <ImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/img_cat_status"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"

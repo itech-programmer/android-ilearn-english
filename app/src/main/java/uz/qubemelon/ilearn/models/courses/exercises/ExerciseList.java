@@ -3,9 +3,6 @@ package uz.qubemelon.ilearn.models.courses.exercises;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.List;
-
-import uz.qubemelon.ilearn.models.courses.questions.Answers;
 
 public class ExerciseList implements Serializable {
 

@@ -13,8 +13,8 @@
 
             <View
                 android:id="@+id/circle_view"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="-16dp"
                 android:layout_marginEnd="-32dp"
@@ -34,6 +34,7 @@
                     android:id="@+id/text_create_account"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:text="@string/create_account"
                     android:textColor="@color/text_color_primary"
                     android:textSize="30sp"
@@ -47,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_header_text"
                 android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="@dimen/normal_margin"
+                android:layout_marginTop="@dimen/small_margin"
                 android:layout_marginEnd="@dimen/normal_margin"
                 android:orientation="vertical">
 
@@ -88,6 +89,29 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_username"
+                        style="@style/text_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:textColor="@color/text_color_black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_email"
+                    style="@style/text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:textColorHint="@color/text_color_black"
+                    app:boxStrokeColor="@color/text_color_primary"
+                    app:endIconTint="@color/text_color_black"
+                    app:hintTextColor="@color/text_color_black"
+                    app:hintAnimationEnabled="true"
+                    app:endIconMode="clear_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_email"
                         style="@style/text_input"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -139,34 +163,6 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <RelativeLayout
-                    android:id="@+id/layout_forget_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/small_margin">
-
-                    <androidx.appcompat.widget.AppCompatCheckBox
-                        android:id="@+id/remember_me"
-                        style="@style/Widget.Material3.CompoundButton.CheckBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="@string/remember_me"
-                        android:textColor="@color/text_color_black"
-                        android:textSize="@dimen/header_text_mini" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/forget_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/transparent"
-                        android:text="@string/forget_password"
-                        android:textColor="@color/text_color_black"
-                        android:textSize="@dimen/header_text_extra_mini" />
-
-                </RelativeLayout>
-
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/btn_sign_up"
                     android:layout_width="match_parent"
@@ -206,22 +202,6 @@
 
                 </RelativeLayout>
             </LinearLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout_circle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/layout_sign_in">
-
-                <View
-                    android:id="@+id/circle_bottom"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentStart="true"
-                    android:background="@drawable/ic_circle" />
-
-            </RelativeLayout>
 
         </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

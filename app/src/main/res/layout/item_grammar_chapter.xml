@@ -1,0 +1,32 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/exercise_background"
+    android:elevation="10dp">
+
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/grammar_image"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:padding="8dp"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:src="@drawable/ic_no_image"-->
+<!--        app:srcCompat="@drawable/ic_no_image" />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/grammar_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="@string/title_chapter_name"
+        android:textSize="18sp" />
+</RelativeLayout>

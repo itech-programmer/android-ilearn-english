@@ -7,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import uz.qubemelon.ilearn.R;
 import uz.qubemelon.ilearn.database.Storage;
 import uz.qubemelon.ilearn.models.courses.chapters.VocabularyChapterList;
@@ -34,7 +37,7 @@ public class VocabularyChaptersAdapter extends RecyclerView.Adapter<VocabularyCh
     @NonNull
     @Override
     public ChapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chapter, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vocabulary_chapter, parent, false);
         return new ChapterHolder(view);
     }
 
@@ -70,7 +73,7 @@ public class VocabularyChaptersAdapter extends RecyclerView.Adapter<VocabularyCh
             Storage storage = new Storage(activity);
             Intent intent = new Intent(activity, VocabularyLessonsListActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            storage.save_vocabulary_chapter_id(chapter_list_items.get(getAbsoluteAdapterPosition()).getId());
+            storage.save_chapter_id(chapter_list_items.get(getAbsoluteAdapterPosition()).getId());
             intent.putExtra(Utility.VOCABULARY_CHAPTER, chapter_list_items.get(getAbsoluteAdapterPosition()).getId());
             activity.startActivity(intent);
             activity.overridePendingTransition(R.anim.slide_left, R.anim.slide_right);

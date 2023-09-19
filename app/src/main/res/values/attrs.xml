@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleButton">
+        <attr name="cb_color" format="color" />
+        <attr name="cb_pressedRingWidth" format="dimension" />
+    </declare-styleable>
+
+    <attr name="theme_color" format="reference"/>
+    <attr name="board_letter" format="reference"/>
+    <attr name="word_list" format="reference"/>
+    <attr name="board_background" format="reference"/>
+</resources>

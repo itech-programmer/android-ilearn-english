@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ilearn" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Base.Theme.AppCompat.Light.DarkActionBar -->
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -16,6 +16,26 @@
         <item name="android:statusBarColor">@color/background_accent_color</item>
         <item name="android:navigationBarColor">@color/background_accent_color</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="bottom_animation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_alpha_out</item>
+        <item name="android:windowExitAnimation">@anim/popup_alpha_in</item>
+    </style>
+
+    <style name="search_view_animation" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="commitIcon">@drawable/ic_search_black</item>
+        <item name="autoCompleteTextViewStyle">@style/auto_complete_text_view_style</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:hint">@string/search</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:maxWidth">9999dp</item>
+    </style>
+
+    <style name="auto_complete_text_view_style" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:popupBackground">@color/transparent</item>
+        <item name="android:popupElevation">0dp</item>
     </style>
 
     <!--styles for text input-->

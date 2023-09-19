@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ilearn</string>
+    <string name="app_name" translatable="false">ilearn</string>
 
     <!-- sign in -->
     <string name="welcome_back">Welcome Back!</string>
@@ -38,7 +38,7 @@
     <string name="account_settings">Account Settings</string>
     <string name="title_zero">0</string>
     <string name="total_points">Total Points</string>
-    <string name="challenges">Challenges</string>
+    <string name="completed_tasks">Completed tasks</string>
     <string name="ranking">Ranking</string>
 
     <!-- Leaderboard Fragment -->
@@ -55,7 +55,7 @@
     <!-- Dictionary Fragment -->
     <string name="search">Search</string>
     <string name="what_do_you_want_to_learn">What do you want to learn ?</string>
-    <string name="word_game">Word Game</string>
+    <string name="words">Words</string>
     <string name="word_game_description">Play some word games to learn and practise describing vocabulary.</string>
     <string name="question_game">Questions</string>
     <string name="title_questions_by_chapters">Questions by Chapters</string>
@@ -101,11 +101,7 @@
     <string name="something_wrong">Something went wrong!</string>
     <string name="wrong_answer">Wrong Answer!</string>
     <string name="submit">submit</string>
-    <string name="answer">Please write answer</string>
-    <string name="english">English</string>
-    <string name="uzbek">Uzbek</string>
-    <string name="karakalpak">Karakalpak</string>
-    <string name="russian">Russian</string>
+    <string name="answer">Please write your answer</string>
     <string name="fives">Fives</string>
 
     <!-- Game Fives -->
@@ -117,5 +113,60 @@
     <string name="vocabulary">Vocabulary</string>
     <string name="grammar">Grammar</string>
 
-
+    <string name="splash_dummy_title">Are you looking for enhance your language knowledge? Then iLearn for you</string>
+    <string name="splash_dummy_description">Learn English with us fun and usefully for free</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="text_forgot_description">We will send you a reset code in your email, so you change your password.</string>
+    <string name="done">Done</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="save">Save</string>
+    <string name="edit_avatar">Edit Avatar</string>
+    <string name="language_name">Language Name</string>
+    <string name="language">EN</string>
+    <string name="select_your_language">Select your Language</string>
+    <string name="oz_language">uz</string>
+    <string name="ozbek_language">Uzbek</string>
+    <string name="qr_language">qr</string>
+    <string name="karakalpak_language">Karakalpak</string>
+    <string name="ru_language">ru</string>
+    <string name="russian_language">Russian</string>
+    <string name="en_language">en</string>
+    <string name="english_language">English</string>
+    <string name="type_here_search_request">Type here search request</string>
+    <string name="text_off">off</string>
+    <string name="camera">camera</string>
+    <string name="gallery">gallery</string>
+    <string name="please_wait">Please wait</string>
+    <string name="first_write_your_answer">First write your answer</string>
+    <string name="intro_text">Welcome to word search game. The goal of the game is to find all the hidden words.</string>
+    <string name="settings">Settings</string>
+    <string name="pref_key_language" translatable="false">language</string>
+    <string name="pref_key_grid_size" translatable="false">boardSize</string>
+    <string name="pref_key_line_color_mode" translatable="false">lineColorMode</string>
+    <string name="pref_key_line_color" translatable="false">lineColor</string>
+    <string name="pref_key_rounded_line" translatable="false">roundedLine</string>
+    <string name="pref_key_num_words_to_select" translatable="false">numWordsToSelect</string>
+    <string name="pref_disable_screen_lock" translatable="false">disableScreenLock</string>
+    <string name="pref_allow_substring" translatable="false">allowSubstring</string>
+    <string name="word_list">Words</string>
+    <string name="pref_summary_language">Select language for word list</string>
+    <string name="pref_title_language">Language</string>
+    <string name="pref_summary_gridsize">Number of rows and columns on the grid</string>
+    <string name="pref_title_gridsize">Grid size</string>
+    <string name="pref_summary_line_color">Determines if found word pencil color is random or same</string>
+    <string name="pref_title_line_color">Constant pencil color</string>
+    <string name="pref_summary_pencil_corner">Square or rounded pencil</string>
+    <string name="pref_title_pencil_corner">Rounded pencil</string>
+    <string name="pref_summary_num_words">Number of random words to select from database</string>
+    <string name="pref_title_num_words">Random word count</string>
+    <string name="pref_summary_pencil_color">Change pencil color</string>
+    <string name="pref_title_pencil_color">Pencil color</string>
+    <string name="pref_summary_screen_lock">Keep device awake while playing</string>
+    <string name="pref_title_screen_lock">Keep device awake</string>
+    <string name="pref_summary_allow_substring">Allow word in word or not</string>
+    <string name="pref_title_allow_substring">Allow substring</string>
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>
+    <string name="info_text" translatable="false">Copyright\n2022</string>
 </resources>

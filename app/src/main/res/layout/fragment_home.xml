@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_accent_color"
@@ -25,10 +26,6 @@
         android:layout_marginTop="@dimen/normal_margin"
         android:background="@drawable/layout_background"
         android:orientation="vertical">
-
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -61,7 +58,7 @@
                         android:layout_marginTop="16dp"
                         android:text="@string/full_name"
                         android:textColor="@color/text_color_grey"
-                        android:textSize="22sp" />
+                        android:textSize="18sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -127,35 +124,61 @@
 
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:id="@+id/chapters"
+                <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/chapters_layout"
-                    android:orientation="vertical">
+                    android:layout_below="@+id/chapters_layout">
 
-                    <!--course recycler view-->
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/vocabulary_chapters_recycler_view"
+                    <LinearLayout
+                        android:id="@+id/chapters"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        tools:itemCount="2"
-                        tools:listitem="@layout/item_chapter"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                        android:orientation="vertical">
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/grammar_chapters_recycler_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        tools:itemCount="2"
-                        tools:listitem="@layout/item_chapter"
-                        android:visibility="gone"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                        <!--course recycler view-->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/vocabulary_chapters_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_vocabulary_chapter"
+                            android:visibility="visible"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
-                </LinearLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/grammar_chapters_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_grammar_chapter"
+                            android:visibility="gone"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
             </RelativeLayout>
-        </androidx.core.widget.NestedScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="?attr/actionBarSize"
+        app:layout_behavior=".utilities.design.FabButtonMoveUpwardBehavior">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:src="@drawable/ic_language"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

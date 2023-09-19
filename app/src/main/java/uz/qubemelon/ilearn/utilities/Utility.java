@@ -14,6 +14,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +23,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+import id.zelory.compressor.Compressor;
 import uz.qubemelon.ilearn.R;
+import uz.qubemelon.ilearn.models.courses.exercises.ExerciseList;
 import uz.qubemelon.ilearn.models.courses.questions.Answers;
 
 public class Utility {
@@ -132,6 +136,18 @@ public class Utility {
     public static String get_formatted_date(String date) {
         String[] section = date.split(" ");
         return section[0] + " " + section[1];
+    }
+
+    /* get file compressed */
+    public static File get_compressed_file(File file, Context context) {
+        File compressed_image_file = null;
+        try {
+            compressed_image_file = new Compressor(context).setQuality(40).compressToFile(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return compressed_image_file;
     }
 
     /* this method disable shifting Animation of bottom navigation bar */
